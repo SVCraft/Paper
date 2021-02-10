@@ -1,4 +1,11 @@
-Paper ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/PaperMC/Paper/Build%20Paper/master)
+# This fork
+
+This experimental fork attempts to allow for registration of custom items and blocks into the game. These custom blocks and items are then
+converted right before being sent to the client, meaning no client-side mods are required.
+
+*None of this is done yet*
+
+![Build Paper](https://github.com/SVCraft/Paper/workflows/Build%20Paper/badge.svg)
 ===========
 
 High performance Spigot fork that aims to fix gameplay and mechanics inconsistencies.
