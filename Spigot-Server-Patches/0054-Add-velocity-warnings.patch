@@ -5,10 +5,14 @@ Subject: [PATCH] Add velocity warnings
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0054-Add-velocity-warnings.patch
 index 5faa720f7249cbe0028927bb274cb45009068359..09d28f816520abb0f092bc6cd1bb1f0e3cfe1417 100644
+=======
+index 9799058bd098a9f8fc973ca86791dc0f44a82a81..e2237167df0a132f51d40a2c2070e8ea416b4237 100644
+>>>>>>> master:Spigot-Server-Patches/0052-Add-velocity-warnings.patch
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -263,6 +263,7 @@ public final class CraftServer implements Server {
+@@ -262,6 +262,7 @@ public final class CraftServer implements Server {
      public boolean ignoreVanillaPermissions = false;
      private final List<CraftPlayer> playerView;
      public int reloadCount;

@@ -18,7 +18,11 @@ index bdfd17362518ff2398cf9e1743a7a4f0c7a0e966..cc14e4b4609fa7013df666181c0e02a5
  
      public static <K, V> Collector<Entry<? extends K, ? extends V>, ?, Map<K, V>> a() {
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0132-String-based-Action-Bar-API.patch
 index b5f296b23f5ed30f855fec79775d0026ff2f1d6e..82c99fbab334e16c39ac23ca3765f9543e8d147a 100644
+=======
+index 0c2637ae7e01535088bf9177f5ccf1b1bade98e9..7823ddab7f0bf9b1096cf4a3d54324e8bbb86a09 100644
+>>>>>>> master:Spigot-Server-Patches/0130-String-based-Action-Bar-API.patch
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -243,6 +243,24 @@ public class CraftPlayer extends CraftHumanEntity implements Player {

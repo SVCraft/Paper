@@ -72,10 +72,17 @@ index 32065b573749c54e7b55a84e4c6852701cd6fe5b..38e2d62c2059ec31296f5b6c23519ae5
  
      @Override
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0181-AsyncTabCompleteEvent.patch
 index e89b0502b243a35ddc6c765b45cf2d69e491daff..441547cdae0c2b2d61f79e537896f7521279b478 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -1845,7 +1845,7 @@ public final class CraftServer implements Server {
+=======
+index b6d45407eca3f76299812c7cf98d1fd5d5ade1e2..56b8ff90e56bc553d14b8e2e2695754f08363951 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+@@ -1796,7 +1796,7 @@ public final class CraftServer implements Server {
+>>>>>>> master:Spigot-Server-Patches/0179-AsyncTabCompleteEvent.patch
              offers = tabCompleteChat(player, message);
          }
  

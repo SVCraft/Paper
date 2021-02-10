@@ -152,10 +152,17 @@ index a1491094b58cf814d7b05d6c0ce4067bf34dae1a..a0d1e9f7535db896c0589dc02cb03bda
          }
          // Spigot End
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
+<<<<<<< HEAD:Spigot-Server-Patches/0235-InventoryCloseEvent-Reason-API.patch
 index fb26a4f2953007b7fa503b654a99ca203ccc8caf..38c0d54fcb084bb102ee004cc8987c8358b5a2ac 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
 @@ -373,7 +373,7 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
+=======
+index 99bd0b3f17dea43e85806fcad317ef8227d95715..08955d127859785bad49139c7f211f0ce7ea62ed 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
+@@ -369,7 +369,7 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
+>>>>>>> master:Spigot-Server-Patches/0233-InventoryCloseEvent-Reason-API.patch
          if (((EntityPlayer) getHandle()).playerConnection == null) return;
          if (getHandle().activeContainer != getHandle().defaultContainer) {
              // fire INVENTORY_CLOSE if one already open
@@ -164,7 +171,11 @@ index fb26a4f2953007b7fa503b654a99ca203ccc8caf..38c0d54fcb084bb102ee004cc8987c83
          }
          EntityPlayer player = (EntityPlayer) getHandle();
          Container container;
+<<<<<<< HEAD:Spigot-Server-Patches/0235-InventoryCloseEvent-Reason-API.patch
 @@ -443,8 +443,13 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
+=======
+@@ -435,8 +435,13 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
+>>>>>>> master:Spigot-Server-Patches/0233-InventoryCloseEvent-Reason-API.patch
  
      @Override
      public void closeInventory() {
@@ -180,10 +191,17 @@ index fb26a4f2953007b7fa503b654a99ca203ccc8caf..38c0d54fcb084bb102ee004cc8987c83
      @Override
      public boolean isBlocking() {
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0235-InventoryCloseEvent-Reason-API.patch
 index 03b4d9f0a396ef8016e8f5a8be7198843bf0b8dd..6ecbeffc83cef741c9a4ab1d8de1d536849c9268 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -882,7 +882,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+=======
+index 0fc25497e7605a04088f888aab99482bd7187ae5..290bd5f50618be0a9d1e10afa3642d47501d192d 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+@@ -812,7 +812,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+>>>>>>> master:Spigot-Server-Patches/0233-InventoryCloseEvent-Reason-API.patch
  
          // Close any foreign inventory
          if (getHandle().activeContainer != getHandle().defaultContainer) {
@@ -193,10 +211,14 @@ index 03b4d9f0a396ef8016e8f5a8be7198843bf0b8dd..6ecbeffc83cef741c9a4ab1d8de1d536
  
          // Check if the fromWorld and toWorld are the same.
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
+<<<<<<< HEAD:Spigot-Server-Patches/0235-InventoryCloseEvent-Reason-API.patch
 index 7805ba48a33b12fb7094cd88972f422b14549c8f..229d1df5b10b0823e41b1f32d1bb4770592f81cc 100644
+=======
+index 70a678dc8637897378f9924bae159233b181f817..44fd948d9ce23e541bf47c89ff3d36ac8da9e41a 100644
+>>>>>>> master:Spigot-Server-Patches/0233-InventoryCloseEvent-Reason-API.patch
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -1171,7 +1171,7 @@ public class CraftEventFactory {
+@@ -1165,7 +1165,7 @@ public class CraftEventFactory {
  
      public static Container callInventoryOpenEvent(EntityPlayer player, Container container, boolean cancelled) {
          if (player.activeContainer != player.defaultContainer) { // fire INVENTORY_CLOSE if one already open
@@ -205,7 +227,7 @@ index 7805ba48a33b12fb7094cd88972f422b14549c8f..229d1df5b10b0823e41b1f32d1bb4770
          }
  
          CraftServer server = player.world.getServer();
-@@ -1336,8 +1336,18 @@ public class CraftEventFactory {
+@@ -1330,8 +1330,18 @@ public class CraftEventFactory {
          return event;
      }
  

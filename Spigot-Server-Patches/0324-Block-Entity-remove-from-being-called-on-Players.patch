@@ -12,10 +12,17 @@ Player we will look at limiting the scope of this change. It appears to
 be unintentional in the few cases we've seen so far.
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0324-Block-Entity-remove-from-being-called-on-Players.patch
 index a96eb6d0383fb3a63e8d79eb41c7f9899eab744d..1b5b41cde053de63095099cb1018d429c3fbae75 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -2242,6 +2242,15 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+=======
+index cd6f4d8d3ab72ee2d4c9042bb17966ed36f4c383..fdedd4de5a6538460a4c1124bfe45ceae6f2c809 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+@@ -2037,6 +2037,15 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+>>>>>>> master:Spigot-Server-Patches/0322-Block-Entity-remove-from-being-called-on-Players.patch
      public void resetCooldown() {
          getHandle().resetAttackCooldown();
      }

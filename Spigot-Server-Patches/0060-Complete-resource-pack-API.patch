@@ -22,7 +22,11 @@ index e98dcac7ce09f58a5745a9750c0a4acce5b782c2..e1e2fb4f889cb4c7b92c1da3cedd3d3c
      // CraftBukkit end
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0060-Complete-resource-pack-API.patch
 index b2e153306ffc1ee0456bb37fb164b5a1eb68f117..0c5d3360cbd38b0ac32e115b2b889e6d24dc4164 100644
+=======
+index 72b82fb1cf46cd02b0adc46086c8704ebdd1eb16..5e3b36c1cc3346b2a1b6f84ea4a412beaff8b7b3 100644
+>>>>>>> master:Spigot-Server-Patches/0058-Complete-resource-pack-API.patch
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -137,6 +137,10 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
@@ -36,7 +40,11 @@ index b2e153306ffc1ee0456bb37fb164b5a1eb68f117..0c5d3360cbd38b0ac32e115b2b889e6d
  
      public CraftPlayer(CraftServer server, EntityPlayer entity) {
          super(server, entity);
+<<<<<<< HEAD:Spigot-Server-Patches/0060-Complete-resource-pack-API.patch
 @@ -1888,6 +1892,32 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+=======
+@@ -1812,6 +1816,32 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+>>>>>>> master:Spigot-Server-Patches/0058-Complete-resource-pack-API.patch
      public boolean getAffectsSpawning() {
          return this.getHandle().affectsSpawning;
      }

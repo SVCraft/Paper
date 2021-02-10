@@ -103,7 +103,11 @@ index 4f008e4723d2cb0bcabb2d5621203d63c40c4923..8545146fb1f093f821e3b966d9337049
          return this.a;
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0173-Expose-client-protocol-version-and-virtual-host.patch
 index 82c99fbab334e16c39ac23ca3765f9543e8d147a..80fd6bf4c36738cfa3c5f202760908bb35499efe 100644
+=======
+index 7823ddab7f0bf9b1096cf4a3d54324e8bbb86a09..8f3d5ab144576abc503c7d5e71841e4066570b15 100644
+>>>>>>> master:Spigot-Server-Patches/0171-Expose-client-protocol-version-and-virtual-host.patch
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -187,6 +187,20 @@ public class CraftPlayer extends CraftHumanEntity implements Player {

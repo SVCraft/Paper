@@ -149,7 +149,11 @@ index dbc3552d50c4129e1844c8a379ab5ba396645f52..87ec3987d4b6de836016e91ef90383e3
          return this.e;
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0449-Implement-Player-Client-Options-API.patch
 index 655a8e18ad84b0a1f62cb0f4f740740886fb8cb7..17e3d62ca51f1bb39559fc2293ae6a67b3b8122d 100644
+=======
+index 687df7dd3ac33d8f331ae141782859b80b08a6ff..6d7e6d7b9df864057030322e25110647dbff56ab 100644
+>>>>>>> master:Spigot-Server-Patches/0447-Implement-Player-Client-Options-API.patch
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1,5 +1,8 @@
@@ -161,7 +165,11 @@ index 655a8e18ad84b0a1f62cb0f4f740740886fb8cb7..17e3d62ca51f1bb39559fc2293ae6a67
  import com.destroystokyo.paper.Title;
  import com.google.common.base.Preconditions;
  import com.google.common.collect.ImmutableSet;
+<<<<<<< HEAD:Spigot-Server-Patches/0449-Implement-Player-Client-Options-API.patch
 @@ -2261,6 +2264,24 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+=======
+@@ -2056,6 +2059,24 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+>>>>>>> master:Spigot-Server-Patches/0447-Implement-Player-Client-Options-API.patch
      public void setViewDistance(int viewDistance) {
          throw new NotImplementedException("Per-Player View Distance APIs need further understanding to properly implement (There are per world view distances though!)"); // TODO
      }

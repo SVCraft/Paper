@@ -873,10 +873,17 @@ index 22773eca7561d39cd838338efe6d40ab9421feba..2e56fcc32f914d2b5f4bb9d368f504f4
  
      public PathfinderGoalWrapped(int i, PathfinderGoal pathfindergoal) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0467-Implement-Mob-Goal-API.patch
 index 2d6637b6fc3286516224f8da0d4760433fb61a1b..8e691e594dd0b8fcd5e7fc83cf3562f0d17e18ce 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -2384,5 +2384,11 @@ public final class CraftServer implements Server {
+=======
+index 0c9d9364e4544107231dc23982bd7cb3cc2f0008..4e5681a938bcea925a32ab6ec93610d9d64094a4 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+@@ -2327,5 +2327,11 @@ public final class CraftServer implements Server {
+>>>>>>> master:Spigot-Server-Patches/0465-Implement-Mob-Goal-API.patch
      public boolean isStopping() {
          return net.minecraft.server.MinecraftServer.getServer().hasStopped();
      }

@@ -40,10 +40,17 @@ index ad5a7cbe83fb61b79203369895e82edca2ffcb72..06cf8ca80c314b7c236984c7f6236533
                          double deltaZ = this.locZ() - player.locZ();
                          double distanceSquared = deltaX * deltaX + deltaZ * deltaZ;
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+<<<<<<< HEAD:Spigot-Server-Patches/0347-Per-Player-View-Distance-API-placeholders.patch
 index 1b5b41cde053de63095099cb1018d429c3fbae75..655a8e18ad84b0a1f62cb0f4f740740886fb8cb7 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -2251,6 +2251,16 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+=======
+index fdedd4de5a6538460a4c1124bfe45ceae6f2c809..687df7dd3ac33d8f331ae141782859b80b08a6ff 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
+@@ -2046,6 +2046,16 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+>>>>>>> master:Spigot-Server-Patches/0345-Per-Player-View-Distance-API-placeholders.patch
              super.remove();
          }
      }
