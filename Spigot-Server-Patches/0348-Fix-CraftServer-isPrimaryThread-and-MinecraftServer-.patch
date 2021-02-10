@@ -29,10 +29,10 @@ index c4f1fa6bd54a1928d163d83807f2823029db54e6..83a0dc052683ad2de6843d49d2e2a861
  
      public boolean isDebugging() {
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index c04722999aac8cf4f38765312edf47444b90f91b..9e059fe1befff6ab1f0f04d824e524c33397cb62 100644
+index 53c26b5353e1114a63451af1a466978b094cf2dd..1b420307af7c7c6764a93dd659d045f36e6ba3d9 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -1792,7 +1792,7 @@ public final class CraftServer implements Server {
+@@ -1835,7 +1835,7 @@ public final class CraftServer implements Server {
  
      @Override
      public boolean isPrimaryThread() {
@@ -40,4 +40,4 @@ index c04722999aac8cf4f38765312edf47444b90f91b..9e059fe1befff6ab1f0f04d824e524c3
 +        return Thread.currentThread().equals(console.serverThread); // Paper - Fix issues with detecting main thread properly
      }
  
-     @Override
+     // Paper start

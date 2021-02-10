@@ -102,10 +102,10 @@ index cd50fe3616d4b33c7ad76458fb75683541c33ae5..97425f38ac05c24433dc27c5cda74c36
              }
          }
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index a4c80ebc49ba3b9ac244f64e10448ebc90932795..44cf5fe48650790b3372e9ebbb0b5d6c4b997f62 100644
+index 6234baf6abea43cd054630fb029f0cd40350c723..661f66f4ba2273c4c88c38de431543a1e2d7fa0a 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -803,7 +803,8 @@ public class CraftEventFactory {
+@@ -809,7 +809,8 @@ public class CraftEventFactory {
          for (org.bukkit.inventory.ItemStack stack : event.getDrops()) {
              if (stack == null || stack.getType() == Material.AIR || stack.getAmount() == 0) continue;
  

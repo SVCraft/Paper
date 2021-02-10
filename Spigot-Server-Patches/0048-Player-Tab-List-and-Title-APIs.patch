@@ -5,10 +5,10 @@ Subject: [PATCH] Player Tab List and Title APIs
 
 
 diff --git a/src/main/java/net/minecraft/server/IChatBaseComponent.java b/src/main/java/net/minecraft/server/IChatBaseComponent.java
-index 7441beeaa4ee83467dac4d68176132efc6247337..b8770066a86df25d6ba9ecf74d846c730d228c01 100644
+index de6bfc27cd38fd6293853d55cf62699aade94212..65aec1dc2fd9ef9c9a9f022f13008505383a0af4 100644
 --- a/src/main/java/net/minecraft/server/IChatBaseComponent.java
 +++ b/src/main/java/net/minecraft/server/IChatBaseComponent.java
-@@ -352,6 +352,7 @@ public interface IChatBaseComponent extends Message, IChatFormatted, Iterable<IC
+@@ -356,6 +356,7 @@ public interface IChatBaseComponent extends Message, IChatFormatted, Iterable<IC
              return IChatBaseComponent.ChatSerializer.a.toJsonTree(ichatbasecomponent);
          }
  
@@ -17,10 +17,10 @@ index 7441beeaa4ee83467dac4d68176132efc6247337..b8770066a86df25d6ba9ecf74d846c73
          public static IChatMutableComponent a(String s) {
              return (IChatMutableComponent) ChatDeserializer.a(IChatBaseComponent.ChatSerializer.a, s, IChatMutableComponent.class, false);
 diff --git a/src/main/java/net/minecraft/server/PacketPlayOutTitle.java b/src/main/java/net/minecraft/server/PacketPlayOutTitle.java
-index 3a6e780007bc1b1fa799166daa01d3a9e15c7ab0..535056c64ef866e645b1bfbd149b50c53cb64485 100644
+index 772ca6256964692a2b9c12e2edc532d2a8f51f7b..f98a261d825c9ebe284f1e3658ca1df451995b59 100644
 --- a/src/main/java/net/minecraft/server/PacketPlayOutTitle.java
 +++ b/src/main/java/net/minecraft/server/PacketPlayOutTitle.java
-@@ -43,12 +43,29 @@ public class PacketPlayOutTitle implements Packet<PacketListenerPlayOut> {
+@@ -44,6 +44,17 @@ public class PacketPlayOutTitle implements Packet<PacketListenerPlayOut> {
          }
  
      }
@@ -38,21 +38,8 @@ index 3a6e780007bc1b1fa799166daa01d3a9e15c7ab0..535056c64ef866e645b1bfbd149b50c5
  
      @Override
      public void b(PacketDataSerializer packetdataserializer) throws IOException {
-         packetdataserializer.a((Enum) this.a);
-         if (this.a == PacketPlayOutTitle.EnumTitleAction.TITLE || this.a == PacketPlayOutTitle.EnumTitleAction.SUBTITLE || this.a == PacketPlayOutTitle.EnumTitleAction.ACTIONBAR) {
--            packetdataserializer.a(this.b);
-+            // Paper start
-+            if (this.components != null) {
-+                packetdataserializer.a(net.md_5.bungee.chat.ComponentSerializer.toString(components));
-+            } else {
-+                packetdataserializer.a(this.b);
-+            }
-+            // Paper end
-         }
- 
-         if (this.a == PacketPlayOutTitle.EnumTitleAction.TIMES) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 4bff3bb57ced7d8b6434e7e19c1103a503222fd1..6f651ff6d6ac678dcb1207dea9a122da86750f6f 100644
+index 86ab4dbfd4231ad026a39aa9ff4b128bd64818dc..4328ed755ad909fb3096bfd3b5ae1e8d9ef7283a 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1,5 +1,6 @@
@@ -71,15 +58,15 @@ index 4bff3bb57ced7d8b6434e7e19c1103a503222fd1..6f651ff6d6ac678dcb1207dea9a122da
 +    public void setPlayerListHeaderFooter(BaseComponent[] header, BaseComponent[] footer) {
 +         if (header != null) {
 +             String headerJson = net.md_5.bungee.chat.ComponentSerializer.toString(header);
-+             playerListHeader = net.minecraft.server.ChatBaseComponent.ChatSerializer.jsonToComponent(headerJson);
++             playerListHeader = net.kyori.adventure.text.serializer.gson.GsonComponentSerializer.gson().deserialize(headerJson);
 +         } else {
 +             playerListHeader = null;
 +         }
 +
 +        if (footer != null) {
 +             String footerJson = net.md_5.bungee.chat.ComponentSerializer.toString(footer);
-+             playerListFooter = net.minecraft.server.ChatBaseComponent.ChatSerializer.jsonToComponent(footerJson);
-+         } else {
++             playerListFooter = net.kyori.adventure.text.serializer.gson.GsonComponentSerializer.gson().deserialize(footerJson);
++        } else {
 +             playerListFooter = null;
 +         }
 +
@@ -158,4 +145,4 @@ index 4bff3bb57ced7d8b6434e7e19c1103a503222fd1..6f651ff6d6ac678dcb1207dea9a122da
 +
      @Override
      public String getDisplayName() {
-         return getHandle().displayName;
+         if(true) return net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer.legacySection().serialize(this.getHandle().adventure$displayName); // Paper

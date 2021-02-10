@@ -98,7 +98,7 @@ index 5a7475c2ce72f1a77ae757ee5c77ab4983a150f7..59b00c78f8d92bcceca35d0f25e4d94b
      protected static final DataWatcherObject<NBTTagCompound> bk = DataWatcher.a(EntityHuman.class, DataWatcherRegistry.p);
      protected static final DataWatcherObject<NBTTagCompound> bl = DataWatcher.a(EntityHuman.class, DataWatcherRegistry.p);
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index 18f50189032b710dbdd4e81b079b57b48db49630..caccc482bb230cc6c64a9ef9cd3e8549e3de3212 100644
+index a417971c0cd6e381078d5ed41508ac102ad2472a..f83a0855b7b26b3a804c15afdd69fc3d76f414c9 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -2,6 +2,7 @@ package net.minecraft.server;
@@ -109,7 +109,7 @@ index 18f50189032b710dbdd4e81b079b57b48db49630..caccc482bb230cc6c64a9ef9cd3e8549
  import com.mojang.authlib.GameProfile;
  import com.mojang.datafixers.util.Either;
  import com.mojang.serialization.DataResult;
-@@ -61,7 +62,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+@@ -62,7 +63,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
      public int lastSentExp = -99999999;
      public int invulnerableTicks = 60;
      private EnumChatVisibility bY;
@@ -118,9 +118,9 @@ index 18f50189032b710dbdd4e81b079b57b48db49630..caccc482bb230cc6c64a9ef9cd3e8549
      private long ca = SystemUtils.getMonotonicMillis();
      private Entity spectatedEntity;
      public boolean worldChangeInvuln;
-@@ -1674,6 +1675,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
- 
-     public String locale = null; // CraftBukkit - lowercase // Paper - default to null
+@@ -1672,6 +1673,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+     public String locale = null; // CraftBukkit - add, lowercase // Paper - default to null
+     public java.util.Locale adventure$locale = java.util.Locale.US; // Paper
      public void a(PacketPlayInSettings packetplayinsettings) {
 +        new PlayerClientOptionsChangeEvent(getBukkitEntity(), packetplayinsettings.locale, packetplayinsettings.viewDistance, com.destroystokyo.paper.ClientOption.ChatVisibility.valueOf(packetplayinsettings.getChatVisibility().name()), packetplayinsettings.hasChatColorsEnabled(), new com.destroystokyo.paper.PaperSkinParts(packetplayinsettings.getSkinParts()), packetplayinsettings.getMainHand() == EnumMainHand.LEFT ? MainHand.LEFT : MainHand.RIGHT).callEvent(); // Paper - settings event
          // CraftBukkit start
@@ -149,7 +149,7 @@ index dbc3552d50c4129e1844c8a379ab5ba396645f52..87ec3987d4b6de836016e91ef90383e3
          return this.e;
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 687df7dd3ac33d8f331ae141782859b80b08a6ff..6d7e6d7b9df864057030322e25110647dbff56ab 100644
+index 655a8e18ad84b0a1f62cb0f4f740740886fb8cb7..17e3d62ca51f1bb39559fc2293ae6a67b3b8122d 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1,5 +1,8 @@
@@ -161,7 +161,7 @@ index 687df7dd3ac33d8f331ae141782859b80b08a6ff..6d7e6d7b9df864057030322e25110647
  import com.destroystokyo.paper.Title;
  import com.google.common.base.Preconditions;
  import com.google.common.collect.ImmutableSet;
-@@ -2056,6 +2059,24 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -2261,6 +2264,24 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
      public void setViewDistance(int viewDistance) {
          throw new NotImplementedException("Per-Player View Distance APIs need further understanding to properly implement (There are per world view distances though!)"); // TODO
      }
