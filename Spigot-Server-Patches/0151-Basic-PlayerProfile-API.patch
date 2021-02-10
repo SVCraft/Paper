@@ -509,10 +509,10 @@ index e89c92aded564fe689cc1aa8d0c83abb72f7b10c..aa1b18ffa1e2b7f865f63b7df81d8f3b
          private volatile long c;
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 7bc616faba6e98cb04a36ab26afa7cfb7c9eacd6..e89b0502b243a35ddc6c765b45cf2d69e491daff 100644
+index 9abf73ca40279c0802be90a687dad64992aa84ef..b6d45407eca3f76299812c7cf98d1fd5d5ade1e2 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -228,6 +228,9 @@ import org.yaml.snakeyaml.error.MarkedYAMLException;
+@@ -227,6 +227,9 @@ import org.yaml.snakeyaml.error.MarkedYAMLException;
  
  import net.md_5.bungee.api.chat.BaseComponent; // Spigot
  
@@ -522,7 +522,7 @@ index 7bc616faba6e98cb04a36ab26afa7cfb7c9eacd6..e89b0502b243a35ddc6c765b45cf2d69
  public final class CraftServer implements Server {
      private final String serverName = "Paper"; // Paper
      private final String serverVersion;
-@@ -2308,5 +2311,24 @@ public final class CraftServer implements Server {
+@@ -2251,5 +2254,24 @@ public final class CraftServer implements Server {
      public boolean suggestPlayerNamesWhenNullTabCompletions() {
          return com.destroystokyo.paper.PaperConfig.suggestPlayersWhenNullTabCompletions;
      }

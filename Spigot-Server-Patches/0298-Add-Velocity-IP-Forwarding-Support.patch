@@ -127,10 +127,10 @@ index 0000000000000000000000000000000000000000..fdd8708f974700c7cde6e436c2f189d9
 +    }
 +}
 diff --git a/src/main/java/net/minecraft/server/LoginListener.java b/src/main/java/net/minecraft/server/LoginListener.java
-index 066b0dbdbc101a8235fb872c2d1e9d427dfd6bb8..ddad076c7eb6d30f2e0f187e004c9e198f7ff777 100644
+index 87dcb1688d1bf1221609a410c33a8d61b0761a1f..2b46943e094544611390758664f3b2a3e2949323 100644
 --- a/src/main/java/net/minecraft/server/LoginListener.java
 +++ b/src/main/java/net/minecraft/server/LoginListener.java
-@@ -27,6 +27,7 @@ import org.bukkit.craftbukkit.util.Waitable;
+@@ -26,6 +26,7 @@ import org.bukkit.craftbukkit.util.Waitable;
  import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
  import org.bukkit.event.player.PlayerPreLoginEvent;
  // CraftBukkit end
@@ -138,7 +138,7 @@ index 066b0dbdbc101a8235fb872c2d1e9d427dfd6bb8..ddad076c7eb6d30f2e0f187e004c9e19
  
  public class LoginListener implements PacketLoginInListener {
  
-@@ -43,6 +44,7 @@ public class LoginListener implements PacketLoginInListener {
+@@ -42,6 +43,7 @@ public class LoginListener implements PacketLoginInListener {
      private SecretKey loginKey;
      private EntityPlayer l;
      public String hostname = ""; // CraftBukkit - add field
@@ -146,7 +146,7 @@ index 066b0dbdbc101a8235fb872c2d1e9d427dfd6bb8..ddad076c7eb6d30f2e0f187e004c9e19
  
      public LoginListener(MinecraftServer minecraftserver, NetworkManager networkmanager) {
          this.g = LoginListener.EnumProtocolState.HELLO;
-@@ -194,6 +196,14 @@ public class LoginListener implements PacketLoginInListener {
+@@ -193,6 +195,14 @@ public class LoginListener implements PacketLoginInListener {
              this.g = LoginListener.EnumProtocolState.KEY;
              this.networkManager.sendPacket(new PacketLoginOutEncryptionBegin("", this.server.getKeyPair().getPublic().getEncoded(), this.e));
          } else {
@@ -161,7 +161,7 @@ index 066b0dbdbc101a8235fb872c2d1e9d427dfd6bb8..ddad076c7eb6d30f2e0f187e004c9e19
              // Spigot start
              // Paper start - Cache authenticator threads
              authenticatorPool.execute(new Runnable() {
-@@ -295,6 +305,12 @@ public class LoginListener implements PacketLoginInListener {
+@@ -294,6 +304,12 @@ public class LoginListener implements PacketLoginInListener {
      public class LoginHandler {
  
          public void fireEvents() throws Exception {
@@ -174,7 +174,7 @@ index 066b0dbdbc101a8235fb872c2d1e9d427dfd6bb8..ddad076c7eb6d30f2e0f187e004c9e19
                          String playerName = i.getName();
                          java.net.InetAddress address = ((java.net.InetSocketAddress) networkManager.getSocketAddress()).getAddress();
                          java.util.UUID uniqueId = i.getId();
-@@ -342,6 +358,35 @@ public class LoginListener implements PacketLoginInListener {
+@@ -341,6 +357,35 @@ public class LoginListener implements PacketLoginInListener {
      // Spigot end
  
      public void a(PacketLoginInCustomPayload packetloginincustompayload) {
@@ -211,10 +211,10 @@ index 066b0dbdbc101a8235fb872c2d1e9d427dfd6bb8..ddad076c7eb6d30f2e0f187e004c9e19
      }
  
 diff --git a/src/main/java/net/minecraft/server/PacketDataSerializer.java b/src/main/java/net/minecraft/server/PacketDataSerializer.java
-index 3d6fbde63d110559b552d052ef9a934318a00682..4be310ada6477b2040f2ea11010f429c3f38c4ac 100644
+index ee24acdd5e843e5421bf83bd6c069a4ecca09115..f43193c1090238f2241b878120247d1b3d0d4e57 100644
 --- a/src/main/java/net/minecraft/server/PacketDataSerializer.java
 +++ b/src/main/java/net/minecraft/server/PacketDataSerializer.java
-@@ -173,6 +173,7 @@ public class PacketDataSerializer extends ByteBuf {
+@@ -164,6 +164,7 @@ public class PacketDataSerializer extends ByteBuf {
          return this.d(oenum.ordinal());
      }
  
@@ -222,7 +222,7 @@ index 3d6fbde63d110559b552d052ef9a934318a00682..4be310ada6477b2040f2ea11010f429c
      public int i() {
          int i = 0;
          int j = 0;
-@@ -213,6 +214,7 @@ public class PacketDataSerializer extends ByteBuf {
+@@ -204,6 +205,7 @@ public class PacketDataSerializer extends ByteBuf {
          return this;
      }
  
@@ -230,7 +230,7 @@ index 3d6fbde63d110559b552d052ef9a934318a00682..4be310ada6477b2040f2ea11010f429c
      public UUID k() {
          return new UUID(this.readLong(), this.readLong());
      }
-@@ -340,6 +342,7 @@ public class PacketDataSerializer extends ByteBuf {
+@@ -331,6 +333,7 @@ public class PacketDataSerializer extends ByteBuf {
          }
      }
  
@@ -273,10 +273,10 @@ index b52e8b72eaee87e227b7cc2fd66101550262cb7e..990cfea6c2339cd3cf688e4645de76dc
      public void a(PacketDataSerializer packetdataserializer) throws IOException {
          this.a = packetdataserializer.i();
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index cb73b10ca46b6bb2080f4c76f48a2b9789408dc4..1babfde50eee8d90cab8d8d0445d5dae7f5965bf 100644
+index 77c782acdfc4f0403a06219759f0154d77f69c58..42f3d7545203f9e00ac241452ac8f214c693486d 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -686,7 +686,7 @@ public final class CraftServer implements Server {
+@@ -682,7 +682,7 @@ public final class CraftServer implements Server {
      @Override
      public long getConnectionThrottle() {
          // Spigot Start - Automatically set connection throttle for bungee configurations

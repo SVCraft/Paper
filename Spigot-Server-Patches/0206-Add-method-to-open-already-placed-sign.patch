@@ -5,10 +5,10 @@ Subject: [PATCH] Add method to open already placed sign
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
-index b1f837fcbaa2ab9d83bb8f17b24dd45fdc3b14e4..fb26a4f2953007b7fa503b654a99ca203ccc8caf 100644
+index 1f5f04aecfaccc80b2db8e14ba2c39f53528191b..99bd0b3f17dea43e85806fcad317ef8227d95715 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
-@@ -604,6 +604,17 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
+@@ -596,6 +596,17 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
          }
      }
  

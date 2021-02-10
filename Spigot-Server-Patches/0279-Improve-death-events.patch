@@ -274,10 +274,10 @@ index 858db1505aa06d85f4e0b522d221f6543ff40f56..352049363d4b7a0302610f7d7cd54c9c
          return this.isBaby() ? (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.5F : (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F;
      }
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index d606e3faaf7c58d89539b6bd997978c066218b9a..273fd5a83790f76f089c2b1308a1e02ac6828683 100644
+index cadcf029f1b675f9e847d07f2d3eacce8b19ec96..012856b4dd5a004979d8a5f8521774a404d7d090 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
-@@ -86,6 +86,10 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+@@ -85,6 +85,10 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
      public int ping;
      public boolean viewingCredits;
      private int containerUpdateDelay; // Paper
@@ -288,10 +288,10 @@ index d606e3faaf7c58d89539b6bd997978c066218b9a..273fd5a83790f76f089c2b1308a1e02a
  
      // CraftBukkit start
      public String displayName;
-@@ -589,6 +593,15 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
-         IChatBaseComponent defaultMessage = this.getCombatTracker().getDeathMessage();
+@@ -587,6 +591,15 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
  
-         org.bukkit.event.entity.PlayerDeathEvent event = CraftEventFactory.callPlayerDeathEvent(this, loot, PaperAdventure.asAdventure(defaultMessage), keepInventory); // Paper - Adventure
+         String deathmessage = defaultMessage.getString();
+         org.bukkit.event.entity.PlayerDeathEvent event = CraftEventFactory.callPlayerDeathEvent(this, loot, deathmessage, keepInventory);
 +        // Paper start - cancellable death event
 +        if (event.isCancelled()) {
 +            // make compatible with plugins that might have already set the health in an event listener
@@ -304,7 +304,7 @@ index d606e3faaf7c58d89539b6bd997978c066218b9a..273fd5a83790f76f089c2b1308a1e02a
  
          // SPIGOT-943 - only call if they have an inventory open
          if (this.activeContainer != this.defaultContainer) {
-@@ -735,8 +748,17 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+@@ -738,8 +751,17 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
                          }
                      }
                  }
@@ -325,10 +325,10 @@ index d606e3faaf7c58d89539b6bd997978c066218b9a..273fd5a83790f76f089c2b1308a1e02a
          }
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 17ca2f9fbd9f43a9b39637d81e26c92ec00ed4d2..bb88a4a035dc7f56c9b0e81e5c613235944ff934 100644
+index 96b9de5bf1ce1d32efe8d62079331c55533e4f15..42d7bd435fa8ee94af5eda4542598ed1c6fbd0c1 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -1853,7 +1853,15 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -1783,7 +1783,15 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
      }
  
      public void sendHealthUpdate() {
@@ -346,10 +346,10 @@ index 17ca2f9fbd9f43a9b39637d81e26c92ec00ed4d2..bb88a4a035dc7f56c9b0e81e5c613235
  
      public void injectScaledMaxHealth(Collection<AttributeModifiable> collection, boolean force) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 42ffb557ac121ebf9404c02696231ef4e7117c92..3719bf85502f8b0a44ea2044163df84f4273cbc2 100644
+index 2b0d09e8791a0b2915eb36bda5f0848731c4236b..995194c4499cc93dc2fa21b0a6d7d826877d2c78 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -789,9 +789,16 @@ public class CraftEventFactory {
+@@ -783,9 +783,16 @@ public class CraftEventFactory {
      public static EntityDeathEvent callEntityDeathEvent(EntityLiving victim, List<org.bukkit.inventory.ItemStack> drops) {
          CraftLivingEntity entity = (CraftLivingEntity) victim.getBukkitEntity();
          EntityDeathEvent event = new EntityDeathEvent(entity, drops, victim.getExpReward());
@@ -366,7 +366,7 @@ index 42ffb557ac121ebf9404c02696231ef4e7117c92..3719bf85502f8b0a44ea2044163df84f
          victim.expToDrop = event.getDroppedExp();
  
          for (org.bukkit.inventory.ItemStack stack : event.getDrops()) {
-@@ -807,8 +814,15 @@ public class CraftEventFactory {
+@@ -801,8 +808,15 @@ public class CraftEventFactory {
          CraftPlayer entity = victim.getBukkitEntity();
          PlayerDeathEvent event = new PlayerDeathEvent(entity, drops, victim.getExpReward(), 0, deathMessage);
          event.setKeepInventory(keepInventory);
@@ -382,7 +382,7 @@ index 42ffb557ac121ebf9404c02696231ef4e7117c92..3719bf85502f8b0a44ea2044163df84f
  
          victim.keepLevel = event.getKeepLevel();
          victim.newLevel = event.getNewLevel();
-@@ -825,6 +839,31 @@ public class CraftEventFactory {
+@@ -819,6 +833,31 @@ public class CraftEventFactory {
          return event;
      }
  
