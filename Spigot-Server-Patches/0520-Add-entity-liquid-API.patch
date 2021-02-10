@@ -40,10 +40,10 @@ index ad5139428e8cc10ed702dce3fa9c091c22eafa15..83a469447e39b801442769fcb5979e98
          return !this.justCreated && this.M.getDouble(TagsFluid.LAVA) > 0.0D;
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
-index 017410819a628c1b373f45ac5a0e9f00dd56639e..dc42bd1b2b89881789481d736a57011936857abf 100644
+index 666876943675a8c299b414f6b5ea359aac186961..c7636ffc952c436d7148e6e5926b0108cc628821 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
-@@ -1134,5 +1134,29 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
+@@ -1120,5 +1120,29 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
      public org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason getEntitySpawnReason() {
          return getHandle().spawnReason;
      }

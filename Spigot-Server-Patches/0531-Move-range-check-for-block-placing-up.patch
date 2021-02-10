@@ -5,11 +5,7 @@ Subject: [PATCH] Move range check for block placing up
 
 
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-<<<<<<< HEAD:Spigot-Server-Patches/0534-Move-range-check-for-block-placing-up.patch
-index 17d0ca161c2b1a7616b02de3b2868fb1f254b229..07840426996a78c205194069f55b5e57a70becfa 100644
-=======
 index d9911b214e83e4046b4ad82be904600a00955384..601a6fdf52ac0002f130ea27d4dd3e6f64acc381 100644
->>>>>>> master:Spigot-Server-Patches/0531-Move-range-check-for-block-placing-up.patch
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -1512,15 +1512,19 @@ public class PlayerConnection implements PacketListenerPlayIn {

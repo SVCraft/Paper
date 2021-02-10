@@ -69,3 +69,15 @@ index b6f771ed5032cd18b1bcc086a937f66996a26057..a3d8d8ec0e99435a58ab93a7b1f90d16
      @Nullable
      public NBTTagCompound b(String s) {
          return this.tag != null && this.tag.hasKeyOfType(s, 10) ? this.tag.getCompound(s) : null;
+diff --git a/src/main/java/net/minecraft/server/NBTTagString.java b/src/main/java/net/minecraft/server/NBTTagString.java
+index 7ef2378311edd0645472d895cf3756426f25605d..a4747d5dc04ff1e1ec5fd35f927db7d452ea5ae4 100644
+--- a/src/main/java/net/minecraft/server/NBTTagString.java
++++ b/src/main/java/net/minecraft/server/NBTTagString.java
+@@ -40,6 +40,7 @@ public class NBTTagString implements NBTBase {
+         this.data = s;
+     }
+ 
++    public static NBTTagString create(String s) { return a(s); } // Paper - OBFHELPER
+     public static NBTTagString a(String s) {
+         return s.isEmpty() ? NBTTagString.b : new NBTTagString(s);
+     }

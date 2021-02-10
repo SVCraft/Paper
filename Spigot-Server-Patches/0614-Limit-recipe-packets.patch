@@ -23,7 +23,7 @@ index da48ad0e4725d9a9fcb2d60f82249be97be29033..6a9f41eafcd48ff029f027eeebfc0dc9
      public static boolean velocityOnlineMode;
      public static byte[] velocitySecretKey;
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 319b8a44e5c013a3cb33d5efb98db3a3ac09e2ed..33ec03815d29cb669c2868a816a2544d6f497031 100644
+index 4bff738485fc828db147d57e8b6247bced46cc4b..73241af66256ef386790027fd6c7e0ca984524b4 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -1,5 +1,6 @@
@@ -42,8 +42,8 @@ index 319b8a44e5c013a3cb33d5efb98db3a3ac09e2ed..33ec03815d29cb669c2868a816a2544d
  import org.apache.commons.lang3.StringUtils;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
-@@ -31,6 +32,8 @@ import io.papermc.paper.adventure.PaperAdventure; // Paper
- import io.papermc.paper.adventure.VanillaChatMessageLogic; // Paper
+@@ -29,6 +30,8 @@ import org.apache.logging.log4j.Logger;
+ // CraftBukkit start
  import java.util.concurrent.ExecutionException;
  import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 +
@@ -51,7 +51,7 @@ index 319b8a44e5c013a3cb33d5efb98db3a3ac09e2ed..33ec03815d29cb669c2868a816a2544d
  import org.bukkit.Location;
  import org.bukkit.craftbukkit.entity.CraftPlayer;
  import org.bukkit.craftbukkit.event.CraftEventFactory;
-@@ -87,6 +90,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -85,6 +88,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      private volatile int chatThrottle;
      private static final AtomicIntegerFieldUpdater chatSpamField = AtomicIntegerFieldUpdater.newUpdater(PlayerConnection.class, "chatThrottle");
      private final java.util.concurrent.atomic.AtomicInteger tabSpamLimiter = new java.util.concurrent.atomic.AtomicInteger(); // Paper - configurable tab spam limits
@@ -59,7 +59,7 @@ index 319b8a44e5c013a3cb33d5efb98db3a3ac09e2ed..33ec03815d29cb669c2868a816a2544d
      // CraftBukkit end
      private int j;
      private final Int2ShortMap k = new Int2ShortOpenHashMap();
-@@ -235,6 +239,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -233,6 +237,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
          // CraftBukkit start
          for (int spam; (spam = this.chatThrottle) > 0 && !chatSpamField.compareAndSet(this, spam, spam - 1); ) ;
          if (tabSpamLimiter.get() > 0) tabSpamLimiter.getAndDecrement(); // Paper - split to seperate variable
@@ -67,7 +67,7 @@ index 319b8a44e5c013a3cb33d5efb98db3a3ac09e2ed..33ec03815d29cb669c2868a816a2544d
          /* Use thread-safe field access instead
          if (this.chatThrottle > 0) {
              --this.chatThrottle;
-@@ -2630,6 +2635,14 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2627,6 +2632,14 @@ public class PlayerConnection implements PacketListenerPlayIn {
  
      @Override
      public void a(PacketPlayInAutoRecipe packetplayinautorecipe) {

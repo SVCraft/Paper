@@ -5,10 +5,10 @@ Subject: [PATCH] Create HoverEvent from ItemStack Entity
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java
-index bf8a8cad248583c900eacfaf54e30f0a60e1dc54..c79623339cfe8fb8484bcc2a8c3eb119b9e83093 100644
+index 1c3e6e0c9abe681bf9e7305a74a68c1506ad8d0c..af84813c703813ec3a6ca89ff437d89e31a9100f 100644
 --- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftItemFactory.java
-@@ -360,5 +360,40 @@ public final class CraftItemFactory implements ItemFactory {
+@@ -352,5 +352,40 @@ public final class CraftItemFactory implements ItemFactory {
  
          return nms != null ? net.minecraft.server.LocaleLanguage.getInstance().translateKey(nms.getItem().getName()) : null;
      }

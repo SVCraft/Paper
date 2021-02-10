@@ -5,17 +5,10 @@ Subject: [PATCH] Fix Player spawnParticle x/y/z precision loss
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0606-Fix-Player-spawnParticle-x-y-z-precision-loss.patch
-index 5056f96635502b0b93082495871a55a171ce44c1..ee3e4bb122439f96ec35105521285d2c5be317e2 100644
---- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -2022,7 +2022,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
-=======
 index 129f1941d65d11e614f5efefd7f4e4cc2fd55a76..68b95bc17eaa40f11ec3babebbca57d9fb64c9dc 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1952,7 +1952,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
->>>>>>> master:Spigot-Server-Patches/0603-Fix-Player-spawnParticle-x-y-z-precision-loss.patch
          if (data != null && !particle.getDataType().isInstance(data)) {
              throw new IllegalArgumentException("data should be " + particle.getDataType() + " got " + data.getClass());
          }

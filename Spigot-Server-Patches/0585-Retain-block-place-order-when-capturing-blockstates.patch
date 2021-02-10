@@ -10,11 +10,7 @@ In general, look at making this logic more robust (i.e properly handling
 cases where a captured entry is overriden) - but for now this will do.
 
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-<<<<<<< HEAD:Spigot-Server-Patches/0588-Retain-block-place-order-when-capturing-blockstates.patch
-index a9a853f176613fae6c1f5937a724f580ce60db2c..16c3ef27e8f77942401568727ea78230147dba29 100644
-=======
 index b91f1a4623a7d2d49bdd4265df3b1cfcdcb0ef88..23e5ad868f1acfb99ec313fbda9bb83a138ccf0b 100644
->>>>>>> master:Spigot-Server-Patches/0585-Retain-block-place-order-when-capturing-blockstates.patch
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
 @@ -75,7 +75,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {

@@ -5,17 +5,10 @@ Subject: [PATCH] Add additional open container api to HumanEntity
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
-<<<<<<< HEAD:Spigot-Server-Patches/0572-Add-additional-open-container-api-to-HumanEntity.patch
-index f8be287a5c5e273eb71896c16064b1fd085faf7e..fcc1d87f293e2117f0e559805188733454ca211e 100644
---- a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
-+++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
-@@ -457,6 +457,70 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
-=======
 index caabe25db61637c5a695daed00bc9692189e1ad0..2318d19b21514effe28b4d21c0196c8f778d22db 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftHumanEntity.java
 @@ -449,6 +449,70 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
->>>>>>> master:Spigot-Server-Patches/0569-Add-additional-open-container-api-to-HumanEntity.patch
          return this.getHandle().activeContainer.getBukkitView();
      }
  

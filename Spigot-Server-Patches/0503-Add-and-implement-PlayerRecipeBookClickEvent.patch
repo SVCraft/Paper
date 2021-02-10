@@ -5,14 +5,10 @@ Subject: [PATCH] Add and implement PlayerRecipeBookClickEvent
 
 
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-<<<<<<< HEAD:Spigot-Server-Patches/0506-Add-and-implement-PlayerRecipeBookClickEvent.patch
-index 0b285493ec12700be8793b36613c11a6735e711e..52a20065103ece0bf87bc76cc7c1dae366f8b8e7 100644
-=======
 index d47ad31ac47565298bc3e5614a78f7f42d5f4c11..9e8d28146658782c7a89dca7b12c68ea70e132b2 100644
->>>>>>> master:Spigot-Server-Patches/0503-Add-and-implement-PlayerRecipeBookClickEvent.patch
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
-@@ -2615,9 +2615,15 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2612,9 +2612,15 @@ public class PlayerConnection implements PacketListenerPlayIn {
          PlayerConnectionUtils.ensureMainThread(packetplayinautorecipe, this, this.player.getWorldServer());
          this.player.resetIdleTimer();
          if (!this.player.isSpectator() && this.player.activeContainer.windowId == packetplayinautorecipe.b() && this.player.activeContainer.c(this.player) && this.player.activeContainer instanceof ContainerRecipeBook) {

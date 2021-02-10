@@ -10,10 +10,10 @@ This fixes that by checking if the modified spawn location is
 still at a respawn anchor.
 
 diff --git a/src/main/java/net/minecraft/server/PlayerList.java b/src/main/java/net/minecraft/server/PlayerList.java
-index 1da28f6eb3cf7d31e0b491238ec234236afc5b5a..4e2892f36fbc0176cbd6a250c0d23248f693972c 100644
+index 4bbf55379a02ab21b8caac96f894dc920a083635..1f7ded35ee0586c27d8cceabcb20ccb2369e8c02 100644
 --- a/src/main/java/net/minecraft/server/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/PlayerList.java
-@@ -772,6 +772,7 @@ public abstract class PlayerList {
+@@ -770,6 +770,7 @@ public abstract class PlayerList {
          // Paper start
          boolean isBedSpawn = false;
          boolean isRespawn = false;
@@ -21,7 +21,7 @@ index 1da28f6eb3cf7d31e0b491238ec234236afc5b5a..4e2892f36fbc0176cbd6a250c0d23248
          // Paper end
  
          // CraftBukkit start - fire PlayerRespawnEvent
-@@ -782,7 +783,7 @@ public abstract class PlayerList {
+@@ -780,7 +781,7 @@ public abstract class PlayerList {
                  Optional optional;
  
                  if (blockposition != null) {
@@ -30,7 +30,7 @@ index 1da28f6eb3cf7d31e0b491238ec234236afc5b5a..4e2892f36fbc0176cbd6a250c0d23248
                  } else {
                      optional = Optional.empty();
                  }
-@@ -825,7 +826,12 @@ public abstract class PlayerList {
+@@ -823,7 +824,12 @@ public abstract class PlayerList {
              }
              // Spigot End
  
@@ -44,7 +44,7 @@ index 1da28f6eb3cf7d31e0b491238ec234236afc5b5a..4e2892f36fbc0176cbd6a250c0d23248
              if (!flag) entityplayer.reset(); // SPIGOT-4785
              isRespawn = true; // Paper
          } else {
-@@ -863,8 +869,12 @@ public abstract class PlayerList {
+@@ -861,8 +867,12 @@ public abstract class PlayerList {
          }
          // entityplayer1.syncInventory();
          entityplayer1.setHealth(entityplayer1.getHealth());
