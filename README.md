@@ -5,7 +5,7 @@ converted right before being sent to the client, meaning no client-side mods are
 
 *None of this is done yet*
 
-Paper ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/PaperMC/Paper/Build%20Paper/master)
+![Build Paper](https://github.com/SVCraft/Paper/workflows/Build%20Paper/badge.svg)
 ===========
 
 High performance Spigot fork that aims to fix gameplay and mechanics inconsistencies.
