@@ -19,10 +19,10 @@ index 9415588d7df27fb6907381cff802fd8ad983663f..1840d64d1bbb1165981f79dd3deeb198
      // Paper end
  }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
-index c519b46c94792082c62acc05cdbec0734776edf5..bb474fbdf44dbc61b4fa0bced4d15bc2d1fb548f 100644
+index 582ed13a9ba1748444ce4d624d83a4d7be7006f2..475dc1aa2cba77c13033938e719a66707f358914 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
-@@ -1158,5 +1158,9 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
+@@ -1144,5 +1144,9 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
      public boolean isInLava() {
          return getHandle().isInLava();
      }

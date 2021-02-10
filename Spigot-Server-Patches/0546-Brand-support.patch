@@ -5,11 +5,7 @@ Subject: [PATCH] Brand support
 
 
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-<<<<<<< HEAD:Spigot-Server-Patches/0549-Brand-support.patch
-index 07840426996a78c205194069f55b5e57a70becfa..c89aef5b90673a0ffc0bebfa3e6a94325d9d1b0d 100644
-=======
 index 601a6fdf52ac0002f130ea27d4dd3e6f64acc381..f1e3c764fc8d5b6acb2ae94276e31fe37af817b6 100644
->>>>>>> master:Spigot-Server-Patches/0546-Brand-support.patch
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -5,6 +5,7 @@ import com.google.common.primitives.Doubles;
@@ -20,7 +16,7 @@ index 601a6fdf52ac0002f130ea27d4dd3e6f64acc381..f1e3c764fc8d5b6acb2ae94276e31fe3
  import io.netty.util.concurrent.Future;
  import io.netty.util.concurrent.GenericFutureListener;
  import it.unimi.dsi.fastutil.ints.Int2ShortMap;
-@@ -114,6 +115,8 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -112,6 +113,8 @@ public class PlayerConnection implements PacketListenerPlayIn {
      private static final int MAX_SIGN_LINE_LENGTH = Integer.getInteger("Paper.maxSignLength", 80);
      private static final long KEEPALIVE_LIMIT = Long.getLong("paper.playerconnection.keepalive", 30) * 1000; // Paper - provide property to set keepalive limit
  
@@ -29,7 +25,7 @@ index 601a6fdf52ac0002f130ea27d4dd3e6f64acc381..f1e3c764fc8d5b6acb2ae94276e31fe3
      public PlayerConnection(MinecraftServer minecraftserver, NetworkManager networkmanager, EntityPlayer entityplayer) {
          this.minecraftServer = minecraftserver;
          this.networkManager = networkmanager;
-@@ -2843,6 +2846,8 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2841,6 +2844,8 @@ public class PlayerConnection implements PacketListenerPlayIn {
      private static final MinecraftKey CUSTOM_REGISTER = new MinecraftKey("register");
      private static final MinecraftKey CUSTOM_UNREGISTER = new MinecraftKey("unregister");
  
@@ -38,7 +34,7 @@ index 601a6fdf52ac0002f130ea27d4dd3e6f64acc381..f1e3c764fc8d5b6acb2ae94276e31fe3
      @Override
      public void a(PacketPlayInCustomPayload packetplayincustompayload) {
          PlayerConnectionUtils.ensureMainThread(packetplayincustompayload, this, this.player.getWorldServer());
-@@ -2870,6 +2875,16 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2868,6 +2873,16 @@ public class PlayerConnection implements PacketListenerPlayIn {
              try {
                  byte[] data = new byte[packetplayincustompayload.data.readableBytes()];
                  packetplayincustompayload.data.readBytes(data);
@@ -55,7 +51,7 @@ index 601a6fdf52ac0002f130ea27d4dd3e6f64acc381..f1e3c764fc8d5b6acb2ae94276e31fe3
                  server.getMessenger().dispatchIncomingMessage(player.getBukkitEntity(), packetplayincustompayload.tag.toString(), data);
              } catch (Exception ex) {
                  PlayerConnection.LOGGER.error("Couldn\'t dispatch custom payload", ex);
-@@ -2879,6 +2894,12 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2877,6 +2892,12 @@ public class PlayerConnection implements PacketListenerPlayIn {
  
      }
  
@@ -69,17 +65,10 @@ index 601a6fdf52ac0002f130ea27d4dd3e6f64acc381..f1e3c764fc8d5b6acb2ae94276e31fe3
          return (!this.player.joining && !this.networkManager.isConnected()) || this.processedDisconnect; // Paper
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0549-Brand-support.patch
-index e8448061b34b7f577c89eb5a3186d5c30c8e48d8..3846e926e2442bc15dff41c70c5f2176f1c678be 100644
---- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -2394,6 +2394,13 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
-=======
 index 3ca98b422fb0836a08abd1663a940bd22c565eb8..fb871480a55d73681f2a45f6f14b984807d51ba3 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -2189,6 +2189,13 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
->>>>>>> master:Spigot-Server-Patches/0546-Brand-support.patch
          // Paper end
      };
  

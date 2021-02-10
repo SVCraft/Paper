@@ -61,10 +61,10 @@ index d0ce4b96174f85c545a457fe864c7ebadc727ade..ca417825eb0827caad817f65b5132f1d
      }
  
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 0d3e71dd7ce796d45b7471b98dfa0c9b39a0470d..17d0ca161c2b1a7616b02de3b2868fb1f254b229 100644
+index 2d2fd9a45bcfd2b1da8b7dd109eb50257ab394c9..d9911b214e83e4046b4ad82be904600a00955384 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
-@@ -2884,7 +2884,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2882,7 +2882,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      public void a(PacketPlayInDifficultyChange packetplayindifficultychange) {
          PlayerConnectionUtils.ensureMainThread(packetplayindifficultychange, this, this.player.getWorldServer());
          if (this.player.k(2) || this.isExemptPlayer()) {

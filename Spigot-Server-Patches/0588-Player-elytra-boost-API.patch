@@ -5,17 +5,10 @@ Subject: [PATCH] Player elytra boost API
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0591-Player-elytra-boost-API.patch
-index 7c8768765346b9349d0110ecf67be0bc8b00254a..5056f96635502b0b93082495871a55a171ce44c1 100644
---- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -2290,6 +2290,20 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
-=======
 index 3f63f83b21d84a4fa1cfda217afb22c4cf7fd2ad..129f1941d65d11e614f5efefd7f4e4cc2fd55a76 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -2085,6 +2085,20 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
->>>>>>> master:Spigot-Server-Patches/0588-Player-elytra-boost-API.patch
          }
          throw new RuntimeException("Unknown settings type");
      }

@@ -43,10 +43,10 @@ index 471826ee4b32fe73d3c39755005e3287f9673c3c..79f726ef43e70b8882890007146df199
                              this.getNetworkManager().close(chatmessage);
                              return;
 diff --git a/src/main/java/net/minecraft/server/LoginListener.java b/src/main/java/net/minecraft/server/LoginListener.java
-index bdd4766976902e11411728e6faa93b7e43a7ba22..6be12b7ae8501c22a7c544638c44fc6faedd5b07 100644
+index efb59a7409902aa3c4bf95337683346ae82a52fb..c61cd50df0c81f7ab12bd0c955fd6f07f2b02e64 100644
 --- a/src/main/java/net/minecraft/server/LoginListener.java
 +++ b/src/main/java/net/minecraft/server/LoginListener.java
-@@ -86,14 +86,7 @@ public class LoginListener implements PacketLoginInListener {
+@@ -85,14 +85,7 @@ public class LoginListener implements PacketLoginInListener {
      // CraftBukkit start
      @Deprecated
      public void disconnect(String s) {

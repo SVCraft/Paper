@@ -30,7 +30,7 @@ index bf3b236b2090fe4dd67e2f87b0b27c8d7186cb48..c5dd25add39298342a6f4b2a05e137de
      public CraftAttributeMap(AttributeMapBase handle) {
          this.handle = handle;
 diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
-index 2c5482a8c68fd8838b773853e0dee471e93128af..e0a450beadaa5ac73307d729484524b461505b5b 100644
+index ccf1c5d27f83d6a82a0fdb6ff839b7628538c705..99495722455b27ba90523c6d6dfd874aa2a8b3fe 100644
 --- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
 +++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
 @@ -479,7 +479,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {

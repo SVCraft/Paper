@@ -29,11 +29,7 @@ index 65c212690d8ba7c8ea55d4d3b6af1ba3d9f4a7f6..22ab5a861920e1902c64301c3b06cf95
          } else {
              ItemStack itemstack = tileentitydispenser.getItem(i);
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-<<<<<<< HEAD:Spigot-Server-Patches/0642-Implemented-BlockFailedDispenseEvent.patch
-index 22edad7e7faa29155dac1abe9f21781ab1390da6..7721b3ca951054d73b2fbf28c01a7c02b5416451 100644
-=======
 index 30dd99ea12b940d92b4ebba1f74b737dfa0b0ef3..636f2c0a83a6651dae99b39fd96c0c9f065b29b5 100644
->>>>>>> master:Spigot-Server-Patches/0639-Implemented-BlockFailedDispenseEvent.patch
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -4,6 +4,7 @@ import com.google.common.base.Function;

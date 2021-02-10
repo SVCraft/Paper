@@ -4,11 +4,23 @@ Date: Sat, 6 Jun 2020 18:13:42 +0200
 Subject: [PATCH] Support components in ItemMeta
 
 
+diff --git a/src/main/java/net/minecraft/server/IChatBaseComponent.java b/src/main/java/net/minecraft/server/IChatBaseComponent.java
+index b8770066a86df25d6ba9ecf74d846c730d228c01..2eb45e8e05b1a2ad6b8fcb204f2d2b06f9861643 100644
+--- a/src/main/java/net/minecraft/server/IChatBaseComponent.java
++++ b/src/main/java/net/minecraft/server/IChatBaseComponent.java
+@@ -344,6 +344,7 @@ public interface IChatBaseComponent extends Message, IChatFormatted, Iterable<IC
+             return jsonobject;
+         }
+ 
++        public static String componentToJson(IChatBaseComponent ichatbasecomponent) { return a(ichatbasecomponent);} // Paper - OBFHELPER
+         public static String a(IChatBaseComponent ichatbasecomponent) {
+             return IChatBaseComponent.ChatSerializer.a.toJson(ichatbasecomponent);
+         }
 diff --git a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
-index e0a450beadaa5ac73307d729484524b461505b5b..36373e334aa14e009e9531d1e66334969ac8793f 100644
+index 99495722455b27ba90523c6d6dfd874aa2a8b3fe..a11591aa103ea53b505a2b396dcfc0f9f01b68c0 100644
 --- a/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
 +++ b/src/main/java/org/bukkit/craftbukkit/inventory/CraftMetaItem.java
-@@ -873,11 +873,23 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
+@@ -861,11 +861,23 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
          return CraftChatMessage.fromJSONComponent(displayName);
      }
  
@@ -32,7 +44,7 @@ index e0a450beadaa5ac73307d729484524b461505b5b..36373e334aa14e009e9531d1e6633496
      @Override
      public boolean hasDisplayName() {
          return displayName != null;
-@@ -1020,6 +1032,14 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
+@@ -996,6 +1008,14 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
          return this.lore == null ? null : new ArrayList<String>(Lists.transform(this.lore, CraftChatMessage::fromJSONComponent));
      }
  
@@ -47,7 +59,7 @@ index e0a450beadaa5ac73307d729484524b461505b5b..36373e334aa14e009e9531d1e6633496
      @Override
      public void setLore(List<String> lore) {
          if (lore == null || lore.isEmpty()) {
-@@ -1034,6 +1054,21 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
+@@ -1010,6 +1030,21 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
          }
      }
  
@@ -69,7 +81,7 @@ index e0a450beadaa5ac73307d729484524b461505b5b..36373e334aa14e009e9531d1e6633496
      @Override
      public boolean hasCustomModelData() {
          return customModelData != null;
-@@ -1495,6 +1530,11 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
+@@ -1471,6 +1506,11 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
          }
  
          for (Object object : addFrom) {

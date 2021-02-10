@@ -6,11 +6,7 @@ Subject: [PATCH] Fix for large move vectors crashing server
 Check movement distance also based on current position.
 
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-<<<<<<< HEAD:Spigot-Server-Patches/0584-Fix-for-large-move-vectors-crashing-server.patch
-index 42a0adc56b3d5c42802608bf972b42dd554eafc9..ba374b5d1d4950527d14607e5eb047142aa89cce 100644
-=======
 index 5af38d36f64020d1df492ad57fafd2baf867536a..9fd9d81b1d875c4f465f8fb509b35da49695d4c8 100644
->>>>>>> master:Spigot-Server-Patches/0581-Fix-for-large-move-vectors-crashing-server.patch
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -367,19 +367,24 @@ public class PlayerConnection implements PacketListenerPlayIn {

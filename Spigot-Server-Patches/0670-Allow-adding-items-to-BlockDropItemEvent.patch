@@ -5,11 +5,7 @@ Subject: [PATCH] Allow adding items to BlockDropItemEvent
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-<<<<<<< HEAD:Spigot-Server-Patches/0673-Allow-adding-items-to-BlockDropItemEvent.patch
-index ab687c8a7f73bebf089880eae728567856a94ec9..689e19924c6690ba187aa6787f1eb34dd5c85f40 100644
-=======
 index a0a116ac7a4e5ecfd7514b26add44e75be88f631..9ff0f70154367b99317ed3927a97ec08c7e9e015 100644
->>>>>>> master:Spigot-Server-Patches/0670-Allow-adding-items-to-BlockDropItemEvent.patch
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -380,13 +380,30 @@ public class CraftEventFactory {
