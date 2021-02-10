@@ -37,7 +37,7 @@ index eaa10d6e3a3c37b83fed58637941273fee9b0be8..2a5160a937a6a9968f9357c5ea3e4ced
              } else if (f > 6.0F) {
                  double d0 = (entity.locX() - this.locX()) / (double) f;
 diff --git a/src/main/java/net/minecraft/server/EntityInsentient.java b/src/main/java/net/minecraft/server/EntityInsentient.java
-index eb5c3a1f0d9ff665631caf5bf579e83d1ed25e4f..a88521745f9f9b6935a61db52db915ea483af227 100644
+index eb5c3a1f0d9ff665631caf5bf579e83d1ed25e4f..54bb846fe07f232f3bfb53353064d9a572fdd803 100644
 --- a/src/main/java/net/minecraft/server/EntityInsentient.java
 +++ b/src/main/java/net/minecraft/server/EntityInsentient.java
 @@ -20,6 +20,7 @@ import org.bukkit.event.entity.EntityTargetEvent;
@@ -108,7 +108,7 @@ index eb5c3a1f0d9ff665631caf5bf579e83d1ed25e4f..a88521745f9f9b6935a61db52db915ea
      }
  }
 diff --git a/src/main/java/net/minecraft/server/EntityLeash.java b/src/main/java/net/minecraft/server/EntityLeash.java
-index 6bd25833bc3ff3ca46367a48da001ed9bda8c19d..5e4652e997362e7c3fac05ac8a4fcdd6051c4f4a 100644
+index 6bd25833bc3ff3ca46367a48da001ed9bda8c19d..4d64bd3da64af122fe966d37367f87140447df83 100644
 --- a/src/main/java/net/minecraft/server/EntityLeash.java
 +++ b/src/main/java/net/minecraft/server/EntityLeash.java
 @@ -5,6 +5,7 @@ import java.util.List;
@@ -137,7 +137,7 @@ index 6bd25833bc3ff3ca46367a48da001ed9bda8c19d..5e4652e997362e7c3fac05ac8a4fcdd6
                          }
                      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index db56b48f2fd2d45f286339e62090155f8d802969..a0a116ac7a4e5ecfd7514b26add44e75be88f631 100644
+index 696ded96e6018bc5289cc20f72d6dc9395d3b6a6..c9e2d2f0eb1f4075da2b5fa05198de4940ebf354 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -1447,8 +1447,10 @@ public class CraftEventFactory {

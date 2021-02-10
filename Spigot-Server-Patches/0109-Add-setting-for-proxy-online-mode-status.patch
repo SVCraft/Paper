@@ -45,17 +45,10 @@ index 060887d765604e4be82913607bb6266a278f5db6..c5957c2d6c54b076ebe7f9a432e30551
          } else {
              String[] astring1 = astring;
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0109-Add-setting-for-proxy-online-mode-status.patch
 index 0dd537392e0fdbd42466c39d69b03ea3c68c5fb6..027d5409ae70015cdb5469a1502f861ed466ada1 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -1508,7 +1508,8 @@ public final class CraftServer implements Server {
-=======
-index 92d286a8f1f2d222e456be01e355b703fc412d64..aa21e9bf00ee0f3dbe4874f76079fb5c0843db57 100644
---- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -1488,7 +1488,8 @@ public final class CraftServer implements Server {
->>>>>>> master:Spigot-Server-Patches/0107-Add-setting-for-proxy-online-mode-status.patch
              // Spigot Start
              GameProfile profile = null;
              // Only fetch an online UUID in online mode

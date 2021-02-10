@@ -5,7 +5,7 @@ Subject: [PATCH] Zombie API - breaking doors
 
 
 diff --git a/src/main/java/net/minecraft/server/EntityZombie.java b/src/main/java/net/minecraft/server/EntityZombie.java
-index 59bfb9c269aa95d66e7b9f107f6798f7f86fd245..2aaa6aa323e805423a8fd2bd32cc6a1e48edc817 100644
+index e3606722cb1b3f6a11d34e1cdef7210280dba677..096c345da09b273c9e3e30e93759f5901c5e6fb4 100644
 --- a/src/main/java/net/minecraft/server/EntityZombie.java
 +++ b/src/main/java/net/minecraft/server/EntityZombie.java
 @@ -79,10 +79,12 @@ public class EntityZombie extends EntityMonster {

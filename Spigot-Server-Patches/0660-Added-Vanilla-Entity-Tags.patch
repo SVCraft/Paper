@@ -41,17 +41,10 @@ index 0000000000000000000000000000000000000000..4a689a2769ac343c2ffab49631c41601
 +    }
 +}
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0660-Added-Vanilla-Entity-Tags.patch
 index 1b6c79f8c3038cbcae93eb7880cf16e0a77c83e8..3c83e2363aa4c7323eece1e17781bfe19ce26564 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -2217,6 +2217,11 @@ public final class CraftServer implements Server {
-=======
-index 3138ebd9a4fbf50f5aae74c280a8a916500dcb23..85023c68a9c85802383cfcf52ec21392abdf3d85 100644
---- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -2168,6 +2168,11 @@ public final class CraftServer implements Server {
->>>>>>> master:Spigot-Server-Patches/0657-Added-Vanilla-Entity-Tags.patch
                  Preconditions.checkArgument(clazz == org.bukkit.Fluid.class, "Fluid namespace must have fluid type");
  
                  return (org.bukkit.Tag<T>) new CraftFluidTag(console.getTagRegistry().getFluidTags(), key);

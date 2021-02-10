@@ -32,14 +32,10 @@ index 89d3ff83f0e152e9747c554693af4145f0a7d07e..dd104b1cd544983024ac60888940a1c0
  
      public CrashReport b(CrashReport crashreport) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0019-Show-Paper-in-client-crashes-server-lists-and-Mojang.patch
 index b6f867c891c2f02a2e526a0d746d0adde250e202..73ede1a37b141007a6085adcdced82236ef656e9 100644
-=======
-index 351440f534653c9d315ccaf1e923e03ca6ba01f6..a9dc09b8d9ed97cca2a3852bd6c740ad53b0e39b 100644
->>>>>>> master:Spigot-Server-Patches/0017-Show-Paper-in-client-crashes-server-lists-and-Mojang.patch
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -226,7 +226,7 @@ import org.yaml.snakeyaml.error.MarkedYAMLException;
+@@ -227,7 +227,7 @@ import org.yaml.snakeyaml.error.MarkedYAMLException;
  import net.md_5.bungee.api.chat.BaseComponent; // Spigot
  
  public final class CraftServer implements Server {

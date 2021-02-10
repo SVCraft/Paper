@@ -14,11 +14,7 @@ behaviour, we need to move all of this dangerous logic outside
 of the move call and into an appropriate place in the tick method.
 
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-<<<<<<< HEAD:Spigot-Server-Patches/0502-Prevent-position-desync-in-playerconnection-causing-.patch
 index 0cd513c4b2b273dd0ac74682cb98c37cfa4a4f0b..0b285493ec12700be8793b36613c11a6735e711e 100644
-=======
-index 257c3489f9add056966cdb8eaaa49fa438369bb6..d47ad31ac47565298bc3e5614a78f7f42d5f4c11 100644
->>>>>>> master:Spigot-Server-Patches/0499-Prevent-position-desync-in-playerconnection-causing-.patch
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -1176,6 +1176,11 @@ public class PlayerConnection implements PacketListenerPlayIn {

@@ -48,17 +48,10 @@ index 92f42f17d7f554fca819d63c1f9401239894e0e1..066b0dbdbc101a8235fb872c2d1e9d42
                              uniqueId = i.getId();
                              // Paper end
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0201-Player.setPlayerProfile-API.patch
 index 8c72a53f1bf8846983122d3398ca22e70f1c429a..9398ec912372ffd4cd7042b9834290fa574b71b7 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1325,8 +1325,13 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
-=======
-index 168c7995d3d3efb20768706f4fdf9f1f15e92eb6..a630265a84738b2d50fb1b571364df468cfb169c 100644
---- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -1255,8 +1255,13 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
->>>>>>> master:Spigot-Server-Patches/0199-Player.setPlayerProfile-API.patch
          hiddenPlayers.put(player.getUniqueId(), hidingPlugins);
  
          // Remove this player from the hidden player's EntityTrackerEntry
@@ -73,11 +66,7 @@ index 168c7995d3d3efb20768706f4fdf9f1f15e92eb6..a630265a84738b2d50fb1b571364df46
          PlayerChunkMap.EntityTracker entry = tracker.trackedEntities.get(other.getId());
          if (entry != null) {
              entry.clear(getHandle());
-<<<<<<< HEAD:Spigot-Server-Patches/0201-Player.setPlayerProfile-API.patch
 @@ -1367,8 +1372,13 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
-=======
-@@ -1297,8 +1302,13 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
->>>>>>> master:Spigot-Server-Patches/0199-Player.setPlayerProfile-API.patch
          }
          hiddenPlayers.remove(player.getUniqueId());
  
@@ -92,11 +81,7 @@ index 168c7995d3d3efb20768706f4fdf9f1f15e92eb6..a630265a84738b2d50fb1b571364df46
  
          getHandle().playerConnection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, other));
  
-<<<<<<< HEAD:Spigot-Server-Patches/0201-Player.setPlayerProfile-API.patch
 @@ -1377,6 +1387,50 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
-=======
-@@ -1307,6 +1317,50 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
->>>>>>> master:Spigot-Server-Patches/0199-Player.setPlayerProfile-API.patch
              entry.updatePlayer(getHandle());
          }
      }

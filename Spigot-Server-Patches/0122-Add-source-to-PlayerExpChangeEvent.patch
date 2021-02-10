@@ -18,14 +18,10 @@ index fda68abbdd7c970048ba710d7ef35214f2aaa74c..2c2d44562f732c75532cda910db5ce67
  
                  this.die();
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-<<<<<<< HEAD:Spigot-Server-Patches/0122-Add-source-to-PlayerExpChangeEvent.patch
 index dc6c1e4adfe14bb0ae1c60a2ffdb0fb03fe17c22..5f6255ceeede4e4ba3e6e8993b6aad6311f50462 100644
-=======
-index 4b05e6b9abb318055444bea50e05c4ea07fb0def..5562d0449aa35b76a8b0448bfe69fe9664f2f3b0 100644
->>>>>>> master:Spigot-Server-Patches/0120-Add-source-to-PlayerExpChangeEvent.patch
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -117,6 +117,7 @@ import org.bukkit.entity.ThrownPotion;
+@@ -121,6 +121,7 @@ import org.bukkit.entity.ThrownPotion;
  import org.bukkit.entity.Vehicle;
  import org.bukkit.entity.Villager;
  import org.bukkit.entity.Villager.Profession;
@@ -33,7 +29,7 @@ index 4b05e6b9abb318055444bea50e05c4ea07fb0def..5562d0449aa35b76a8b0448bfe69fe96
  import org.bukkit.event.Cancellable;
  import org.bukkit.event.Event;
  import org.bukkit.event.Event.Result;
-@@ -1035,6 +1036,17 @@ public class CraftEventFactory {
+@@ -1041,6 +1042,17 @@ public class CraftEventFactory {
          return event;
      }
  

@@ -31,11 +31,7 @@ index 7e13b1cf6d92c3e0f2dab1ba1d42bd4f250e256c..3820acd65f3cd488dba964e6d9c45885
          } else {
              if (entityhuman.getWorld().isClientSide) {
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-<<<<<<< HEAD:Spigot-Server-Patches/0509-Add-permission-for-command-blocks.patch
 index 52a20065103ece0bf87bc76cc7c1dae366f8b8e7..0d3e71dd7ce796d45b7471b98dfa0c9b39a0470d 100644
-=======
-index 9e8d28146658782c7a89dca7b12c68ea70e132b2..2d2fd9a45bcfd2b1da8b7dd109eb50257ab394c9 100644
->>>>>>> master:Spigot-Server-Patches/0506-Add-permission-for-command-blocks.patch
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -648,7 +648,7 @@ public class PlayerConnection implements PacketListenerPlayIn {

@@ -131,17 +131,10 @@ index 90af43930f9141b0c7f51bb3d887d7b9c4d935eb..1741ec5e241f8ae7a3c30a9021d14cb0
  
      public void c() {
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0022-Player-affects-spawning-API.patch
 index 28368aa85e25ad5ee1e35255f093fd3f5a7a15bf..79c070cc790eafbf27ef30f367373406f68a9f7c 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1784,8 +1784,20 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
-=======
-index 8428ef53e0408c4a7f74cc03e7e238be9c2f1888..84bb5f41064ba8899febb624c75e1357869b4edf 100644
---- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -1708,7 +1708,19 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
->>>>>>> master:Spigot-Server-Patches/0020-Player-affects-spawning-API.patch
      @Override
      public String getLocale() {
          return getHandle().locale;

@@ -5,14 +5,10 @@ Subject: [PATCH] Add OBSTRUCTED reason to BedEnterResult
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-<<<<<<< HEAD:Spigot-Server-Patches/0623-Add-OBSTRUCTED-reason-to-BedEnterResult.patch
 index 91832e76f22742f85a6de7e1d4f79a9406f98839..22edad7e7faa29155dac1abe9f21781ab1390da6 100644
-=======
-index fe36039b7dbfeebc1e01a9cefc5f8f391087fee6..30dd99ea12b940d92b4ebba1f74b737dfa0b0ef3 100644
->>>>>>> master:Spigot-Server-Patches/0620-Add-OBSTRUCTED-reason-to-BedEnterResult.patch
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -261,6 +261,10 @@ public class CraftEventFactory {
+@@ -267,6 +267,10 @@ public class CraftEventFactory {
                          return BedEnterResult.TOO_FAR_AWAY;
                      case NOT_SAFE:
                          return BedEnterResult.NOT_SAFE;

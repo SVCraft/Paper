@@ -71,14 +71,10 @@ index 7391fd31148dbde60e34955841a296f454ac768e..53a8ea7d1eff84abe6c49464d556aa27
  
          this.checkBlockCollisions();
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-<<<<<<< HEAD:Spigot-Server-Patches/0124-Add-ProjectileCollideEvent.patch
 index 5f6255ceeede4e4ba3e6e8993b6aad6311f50462..1db30da4294f1187eeacecfc056a44963378a1cc 100644
-=======
-index 5562d0449aa35b76a8b0448bfe69fe9664f2f3b0..3dc4d0a3abe4eb0c2024dfc77f3be57f3d2a018c 100644
->>>>>>> master:Spigot-Server-Patches/0122-Add-ProjectileCollideEvent.patch
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -1180,6 +1180,16 @@ public class CraftEventFactory {
+@@ -1186,6 +1186,16 @@ public class CraftEventFactory {
          return CraftItemStack.asNMSCopy(bitem);
      }
  

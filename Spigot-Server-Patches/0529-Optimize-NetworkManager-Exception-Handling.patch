@@ -44,7 +44,7 @@ index cdaa8be90d16b0e9e2f92a3e2ed120b856feab54..2aaa8770edfd8acc6861c23176e40586
          for (int i = 0; i < abyte.length; ++i) {
              if (!bytebuf.isReadable()) {
 diff --git a/src/main/java/net/minecraft/server/PlayerConnectionUtils.java b/src/main/java/net/minecraft/server/PlayerConnectionUtils.java
-index 9c810b5aa21ca714ccf355d5648b7612f99b6884..8c7080777b370f97e1291dfedde5b419290f39cc 100644
+index eb3269e0ea3ce33d08e9eee3bca7cf434921e991..7ea293f38dedd6066601d94adbe175a31c502e1f 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnectionUtils.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnectionUtils.java
 @@ -22,6 +22,21 @@ public class PlayerConnectionUtils {

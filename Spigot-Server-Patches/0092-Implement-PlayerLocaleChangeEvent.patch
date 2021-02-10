@@ -30,19 +30,11 @@ index 5dd83b62d8d6f8f7b8483064be5658a439824052..89b1561bfce8b0a0b34e3f2ce706e314
          this.locale = packetplayinsettings.locale;
          // Paper start
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-<<<<<<< HEAD:Spigot-Server-Patches/0092-Implement-PlayerLocaleChangeEvent.patch
 index 2d8228878bbf17a0a9c77ccc67b40a9a833cb37d..b5f296b23f5ed30f855fec79775d0026ff2f1d6e 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1891,8 +1891,10 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
      // Paper end
-=======
-index c1205594a8da1a28ac9ee30d1d70f1011f0a2327..0c2637ae7e01535088bf9177f5ccf1b1bade98e9 100644
---- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-+++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -1815,8 +1815,10 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
- 
->>>>>>> master:Spigot-Server-Patches/0090-Implement-PlayerLocaleChangeEvent.patch
      @Override
      public String getLocale() {
 -        return getHandle().locale;

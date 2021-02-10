@@ -6,11 +6,7 @@ Subject: [PATCH] Remove unused World Tile Entity List
 Massive hit to performance and it is completely unnecessary.
 
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-<<<<<<< HEAD:Spigot-Server-Patches/0086-Remove-unused-World-Tile-Entity-List.patch
 index 3dd789131e8ebe5ac82b1fac2cd15aa5893704ee..05bd9dd542ddb2508cb0c7138833371b52f1164e 100644
-=======
-index d6ee6aae693519a379b4a6ba26642d5ef78e4deb..369a6b42a89fd75aeb3da4930f47b6917a1ae393 100644
->>>>>>> master:Spigot-Server-Patches/0084-Remove-unused-World-Tile-Entity-List.patch
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
 @@ -39,7 +39,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
@@ -43,7 +39,7 @@ index d6ee6aae693519a379b4a6ba26642d5ef78e4deb..369a6b42a89fd75aeb3da4930f47b691
              this.tileEntityListUnload.clear();
          }
  
-@@ -729,7 +729,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
+@@ -730,7 +730,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
                  tilesThisCycle--;
                  this.tileEntityListTick.remove(tileTickPosition--);
                  // Spigot end
@@ -52,7 +48,7 @@ index d6ee6aae693519a379b4a6ba26642d5ef78e4deb..369a6b42a89fd75aeb3da4930f47b691
                  if (this.isLoaded(tileentity.getPosition())) {
                      this.getChunkAtWorldCoords(tileentity.getPosition()).removeTileEntity(tileentity.getPosition());
                  }
-@@ -759,7 +759,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
+@@ -760,7 +760,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
                          this.notify(tileentity1.getPosition(), iblockdata, iblockdata, 3);
                          // CraftBukkit start
                          // From above, don't screw this up - SPIGOT-1746
@@ -61,7 +57,7 @@ index d6ee6aae693519a379b4a6ba26642d5ef78e4deb..369a6b42a89fd75aeb3da4930f47b691
                              this.a(tileentity1);
                          }
                          // CraftBukkit end
-@@ -905,7 +905,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
+@@ -906,7 +906,7 @@ public abstract class World implements GeneratorAccess, AutoCloseable {
          } else {
              if (tileentity != null) {
                  this.tileEntityListPending.remove(tileentity);

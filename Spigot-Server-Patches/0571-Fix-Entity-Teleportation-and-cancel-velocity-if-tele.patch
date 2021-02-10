@@ -35,11 +35,7 @@ index 83a469447e39b801442769fcb5979e987e2adae9..e65cb9c72e46d50b871d1c7b5789a185
          this.yaw = f;
          this.pitch = f1;
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-<<<<<<< HEAD:Spigot-Server-Patches/0571-Fix-Entity-Teleportation-and-cancel-velocity-if-tele.patch
 index c89aef5b90673a0ffc0bebfa3e6a94325d9d1b0d..42a0adc56b3d5c42802608bf972b42dd554eafc9 100644
-=======
-index f1e3c764fc8d5b6acb2ae94276e31fe37af817b6..5af38d36f64020d1df492ad57fafd2baf867536a 100644
->>>>>>> master:Spigot-Server-Patches/0568-Fix-Entity-Teleportation-and-cancel-velocity-if-tele.patch
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -542,7 +542,7 @@ public class PlayerConnection implements PacketListenerPlayIn {

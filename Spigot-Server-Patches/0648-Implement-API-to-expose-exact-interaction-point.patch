@@ -18,11 +18,7 @@ index 485b609bb5387b0f8a46c1201177cdc6d183ad91..114e986e5132e5e4bb42d0f08a067429
          interactResult = event.useItemInHand() == Event.Result.DENY;
          interactPosition = blockposition.immutableCopy();
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-<<<<<<< HEAD:Spigot-Server-Patches/0648-Implement-API-to-expose-exact-interaction-point.patch
 index 7721b3ca951054d73b2fbf28c01a7c02b5416451..c25f18d9bf851df8cfb90f065c2d9a857d77f229 100644
-=======
-index 636f2c0a83a6651dae99b39fd96c0c9f065b29b5..d543e9ff0622c8fcab9c8ec24648a8038f080a5f 100644
->>>>>>> master:Spigot-Server-Patches/0645-Implement-API-to-expose-exact-interaction-point.patch
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -64,9 +64,11 @@ import net.minecraft.server.NPC;
